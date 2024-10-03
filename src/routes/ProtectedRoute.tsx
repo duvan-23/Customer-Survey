@@ -3,16 +3,16 @@ import { Navigate } from 'react-router-dom';
 
 interface ProtectedRouteProps {
   element: React.ReactNode; 
-  requiredRole: string;   
+  requiredRole: Array<string>;   
 }
 
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ element, requiredRole }) => {
-  const userRole = localStorage.getItem('role'); 
-
-  if (userRole && userRole === requiredRole) {
-    return <>{element}</>; 
-  } else {
+  const userRole = localStorage.getItem('userRole'); 
+  
+  if (!userRole || requiredRole.findIndex(item => JSON.parse(userRole).includes(item))<0) {
     return <Navigate to="/" replace />;
+  } else {
+    return <>{element}</>; 
   }
 };
 
