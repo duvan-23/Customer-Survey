@@ -1,11 +1,11 @@
 import React from "react";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { useNavigate } from "react-router-dom";
-import {  ITodoProviderProps, IHomeContextType } from "./interfaces/home";
+import {  IHomeProviderProps, IHomeContextType } from "./interfaces/home";
 
 const HomeContext = React.createContext<IHomeContextType|null>(null);
 
-const HomeProvider:React.FC<ITodoProviderProps> = ({ children })=>{
+const HomeProvider:React.FC<IHomeProviderProps> = ({ children })=>{
     const {
         saveItem, 
       } = useLocalStorage('userRole',[], true);
@@ -30,7 +30,7 @@ const HomeProvider:React.FC<ITodoProviderProps> = ({ children })=>{
 const useHomeContext = () => {
     const context = React.useContext(HomeContext);
     if (!context) {
-        throw new Error('useTodoContext must be used within a TodoProvider');
+        throw new Error('useHomeContext must be used within a HomeProvider');
     }
     return context;
 };
