@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-export interface ITodoProviderProps {
+export interface IHomeProviderProps {
     children: ReactNode;
 }
 export interface IHomeContextType {
