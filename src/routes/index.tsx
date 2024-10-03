@@ -3,28 +3,36 @@ import { Home } from '../pages/Home';
 import { Survey } from '../pages/Survey';
 import { ProtectedRoute } from './ProtectedRoute';
 import { Statistics } from '../pages/Statistics';
+import { FormProvider } from '../contexts/Form/context';
+import { HomeProvider } from '../contexts/home/context';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Home />,
+    element: (
+      <HomeProvider>
+        <Home />
+      </HomeProvider>
+    ),
   },
   {
     path: '/statistics',
     element: (
       <ProtectedRoute 
       element={<Statistics />}  
-      requiredRole="admin"   
+      requiredRole={["admin"] }  
     />
   ),
   },
   {
     path: '/survey',
     element: (
+      <FormProvider>
         <ProtectedRoute 
-        element={<Survey />}  
-        requiredRole="user"   
-      />
+          element={<Survey />}  
+          requiredRole={["user"]}   
+        />
+      </FormProvider>
     ), 
   },
   {
