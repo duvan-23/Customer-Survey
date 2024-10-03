@@ -24,7 +24,7 @@ const FormProvider:React.FC<IFormProviderProps> = ({ children })=>{
     
     const [ bonusQuestion, setBonusQuestion] = useState({age:false, completed:false, completed2:false});
     const [ errorPattern, setErrorPattern] = useState(false);
-    
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value  } = e.target;
 
@@ -142,7 +142,7 @@ const FormProvider:React.FC<IFormProviderProps> = ({ children })=>{
     
     const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
-        if (name==='age') {
+        if (name==='age'&& value !== '') {
             if ( +value < 18 ) {
                 setFormData((prevData) => ({
                     ...prevData,
