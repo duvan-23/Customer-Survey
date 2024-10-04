@@ -8,22 +8,23 @@ interface TodoProviderProps {
 const RadioOption:React.FC<TodoProviderProps> = (props)=> {
     return(
         <div>
-            <label className="block text-sm font-medium text-gray-700">{props.input.label}</label>
-            <div className="flex space-x-4">
-                {props.data.map((item) => (
-                    <label key={item.key}>
-                        <input
-                        type="radio"
-                        name={props.input.name}
-                        value={item.key}
-                        onChange={props.onChange}
-                        required
-                        />
-                        {item.label}
-                    </label>
-                    ))}
-            </div>
-        </div>
+      <label className="block text-base font-semibold text-gray-900">{props.input.label}</label>
+      <div className="flex space-x-4 mt-2">
+        {props.data.map((item) => (
+          <label key={item.key} className="flex items-center space-x-2">
+            <input
+              type="radio"
+              name={props.input.name}
+              value={item.key}
+              onChange={props.onChange}
+              required
+              className="h-4 w-4 text-blue-600 border-gray-900 focus:ring-blue-500"
+            />
+            <span className="text-black font-normal">{item.label}</span>
+          </label>
+        ))}
+      </div>
+    </div>
     );
 }
 
