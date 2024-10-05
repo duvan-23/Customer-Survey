@@ -6,6 +6,7 @@ import { carMakes, gender } from "../../contexts/Form/Options";
 import { Modal } from "../../components/Modal";
 import { Message } from "../../components/Message";
 import backgroundImage from '../../assets/background.webp';
+import { Nav } from "../../components/Nav";
 
 const Survey: React.FC = ()=>{
     const {
@@ -29,6 +30,9 @@ const Survey: React.FC = ()=>{
                     backgroundRepeat: 'no-repeat',
                 }}
             >
+                <div className="w-full fixed top-0 left-0 z-10">
+                <Nav />
+                </div>
                 <div className="inset-0 bg-black opacity-30 min-h-full"></div>
                 <div 
                     className="relative bg-gradient-to-r from-[#af71a1] to-[#36698d] 
@@ -89,7 +93,7 @@ const Survey: React.FC = ()=>{
                             <hr/>
                             <div className="mb-1 w-full">
                                 <RadioOption 
-                                    data={[{ label: 'FWD', key: 'fwd' }, { label: 'RWD', key: 'rwd' }, { label: 'I don’t know', key: 'unknown' }]}
+                                    data={[{ label: 'FWD', key: 'fwd' }, { label: 'RWD', key: 'rwd' }, { label: 'I don’t know', key: 'idk' }]}
                                     input={{ label: "Which drivetrain do you prefer?", name: "drivetrain" }}
                                     onChange={handleChange}
                                 />
@@ -110,7 +114,7 @@ const Survey: React.FC = ()=>{
                                 </label>
                                 <input
                                     type="number"
-                                    min={1}
+                                    min={0}
                                     name="familyCars"
                                     value={formData.familyCars}
                                     onChange={handleChange}
