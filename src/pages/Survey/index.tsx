@@ -30,13 +30,13 @@ const Survey: React.FC = ()=>{
                     backgroundRepeat: 'no-repeat',
                 }}
             >
-                <div className="w-full fixed top-0 left-0 z-10">
+                <div className="w-full fixed top-0 left-0">
                 <Nav />
                 </div>
                 <div className="inset-0 bg-black opacity-30 min-h-full"></div>
                 <div 
                     className="relative bg-gradient-to-r from-[#af71a1] to-[#36698d] 
-                    shadow-xl rounded-lg p-5 border border-gray-300 w-11/12 md:w-9/12 lg:w-3/5 mx-auto mt-2 z-10"
+                    shadow-xl rounded-lg p-5 border border-gray-300 w-11/12 md:w-9/12 lg:w-3/5 mx-auto mt-16 z-10"
                 >
                     <h2 className="text-3xl font-semibold text-gray-800 text-center mb-6 italic  shadow-sm">
                         Automotive Sales Customer Survey
@@ -53,7 +53,7 @@ const Survey: React.FC = ()=>{
                                 onBlur={handleBlur}
                                 className="mt-1 block w-full p-2.5 border border-gray-300 
                                     rounded-md shadow-sm focus:outline-none focus:border-blue-500 
-                                    bg-white transition duration-200"
+                                    bg-gray-300 transition duration-200"
                                 required
                                 autoComplete="off"
                             />
@@ -120,7 +120,7 @@ const Survey: React.FC = ()=>{
                                     onChange={handleChange}
                                     className="mt-1 block w-full p-2.5 border border-gray-300 
                                         rounded-md shadow-sm focus:outline-none focus:border-blue-500 
-                                        bg-white transition duration-200"
+                                        bg-gray-300 transition duration-200"
                                     required
                                 />
                             </div>
@@ -142,7 +142,7 @@ const Survey: React.FC = ()=>{
                                     onChange={handleChange}
                                     className="mt-1 block w-full p-2.5 border border-gray-300 
                                         rounded-md shadow-sm focus:outline-none focus:border-blue-500 
-                                        bg-white transition duration-200"
+                                        bg-gray-300 transition duration-200"
                                     placeholder="Model name"
                                     autoComplete="off"
                                     required
@@ -158,7 +158,7 @@ const Survey: React.FC = ()=>{
                         <div className="col-span-full w-full flex justify-center">
                             <button
                                 type="submit"
-                                className="w-1/3 bg-[#4582ad] text-gray-800 py-2 
+                                className="w-1/3 bg-[#4a8bba] text-gray-800 py-3 
                                     rounded-lg shadow-lg hover:bg-[#ad51a4] transform 
                                     hover:scale-105 transition duration-200 font-semibold italic"
                                 >

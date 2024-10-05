@@ -12,7 +12,7 @@ const SelectOption:React.FC<TodoProviderProps> = (props)=> {
                 name={props.input.name}
                 value={props.input.value}
                 onChange={props.onChange}
-                className="mt-1 block w-full p-3 border-gray-300  rounded-md shadow-sm focus:outline-none focus:border-blue-500 bg-white transition duration-200"
+                className="mt-1 block w-full p-3 border-gray-300  rounded-md shadow-sm focus:outline-none focus:border-blue-500 bg-gray-300 transition duration-200"
                 required
             >
                 <option value="">Select an option</option>

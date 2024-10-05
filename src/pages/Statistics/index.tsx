@@ -25,7 +25,7 @@ const Statistics: React.FC = ()=>{
         >
            <Nav />
             <div className="inset-0 bg-black opacity-30 min-h-full"></div>
-            <div className="relative bg-transparent rounded-lg shadow-xl px-8 pt-2 pb-8 w-[95%] md:w-[90%] lg:w-[90%] mx-auto mt-0 z-10">
+            <div className="relative bg-transparent rounded-lg shadow-xl px-8 pt-2 pb-8 w-[95%] md:w-[91%] lg:w-[91%] mx-auto mt-0 z-10">
                 <h2 className="text-5xl font-semibold text-gray-800 text-center mb-10 italic shadow-sm">Statistics Overview</h2>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -46,22 +46,22 @@ const Statistics: React.FC = ()=>{
                     </div>
 
                     <div className="bg-gray-100 rounded-lg p-4 shadow-md">
-                        <h3 className="font-semibold mb-2 text-center">Customers target</h3>
+                        <h3 className="font-semibold mb-5 text-center">Customers target</h3>
                         <Pie data={chartData.tagertCustomers} options={optionsPie(' customers')} />
                     </div>
 
                     <div className="bg-gray-100 rounded-lg p-4 shadow-md">
-                        <h3 className="font-semibold mb-2 text-center">Group representation</h3>
+                        <h3 className="font-semibold mb-5 text-center">Group representation</h3>
                         <PolarArea data={chartData.groupPercentage} options={optionsPolarArea}  />
                     </div>
 
                     <div className="bg-gray-100 rounded-lg p-4 shadow-md">
-                        <h3 className="font-semibold mb-2 text-center">The percentage of targetables that care about fuel emissions</h3>
+                        <h3 className="font-semibold mb-5 text-center">The percentage of targetables that care about fuel emissions</h3>
                         <Pie data={chartData.fuelEmissionsConcern} options={optionsPie('%')} />
                     </div>
 
                     <div className="bg-gray-100 rounded-lg p-4 shadow-md">
-                        <h3 className="font-semibold mb-2 text-center">
+                        <h3 className="font-semibold mb-5 text-center">
                             The percentage of targetables that picked FWD or “I don’t know” for drivetrain
                         </h3>
                         <Pie data={chartData.drivetrain} options={optionsPie('%')} />
