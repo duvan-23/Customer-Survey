@@ -15,7 +15,7 @@ const SelectOption:React.FC<TodoProviderProps> = (props)=> {
                 className="mt-1 block w-full p-3 border-gray-300  rounded-md shadow-sm focus:outline-none focus:border-blue-500 bg-white transition duration-200"
                 required
             >
-                <option value="" disabled>Select an option</option>
+                <option value="">Select an option</option>
                 {props.data.map((item) => (
                     <option key={item.key} value={item.key}>
                         {item.label}
