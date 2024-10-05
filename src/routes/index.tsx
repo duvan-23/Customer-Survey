@@ -5,6 +5,7 @@ import { ProtectedRoute } from './ProtectedRoute';
 import { Statistics } from '../pages/Statistics';
 import { FormProvider } from '../contexts/Form/context';
 import { HomeProvider } from '../contexts/home/context';
+import { StatisticsProvider } from '../contexts/Statistics/context';
 
 const router = createBrowserRouter([
   {
@@ -18,10 +19,12 @@ const router = createBrowserRouter([
   {
     path: '/statistics',
     element: (
-      <ProtectedRoute 
-      element={<Statistics />}  
-      requiredRole={["admin"] }  
-    />
+      <StatisticsProvider>
+        <ProtectedRoute 
+          element={<Statistics />}  
+          requiredRole={["admin"] }  
+        />
+      </StatisticsProvider>
   ),
   },
   {
