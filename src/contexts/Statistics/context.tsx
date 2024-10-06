@@ -66,7 +66,7 @@ const StatisticsProvider:React.FC<IStatisticsProviderProps> = ({ children })=>{
     const carFeatures =()=>{
         let data = item.filter((user:IData) => ((user.carMake !=='' && user.carModel !=='' )&&(+user.age >= 18 && +user.age <= 25)));
         let filter:{ [key: string]: { count: number } } =  data.reduce((acc:{ [key: string]:{count:number}}, curr:IData) => {
-            const key = `${curr.carMake} - ${curr.carModel}`; 
+            const key = `${curr.carMake} - ${curr.carModel.toUpperCase()}`; 
         
             if (!acc[key]) {
               acc[key] = {  count: 0 }; 
