@@ -37,6 +37,11 @@ const optionsPie = (textTooltip:string): ChartOptions<'pie'>=>{
         plugins: {
           legend: {
             position: 'bottom',
+            align: 'start', 
+            labels: {
+                padding: 10, 
+                boxWidth: 20,
+            },
           },
           tooltip: {
             callbacks: {
