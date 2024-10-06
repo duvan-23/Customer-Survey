@@ -27,7 +27,8 @@ const StatisticsProvider:React.FC<IStatisticsProviderProps> = ({ children })=>{
     }
 
     const hasLicense =()=>{
-        return {unlicensed:item.filter((user:IData) => user.hasLicense ==='no').length,licensed:item.filter((user:IData) => user.hasLicense === 'yes').length};
+        let licensed = item.filter((user:IData) => user.hasLicense === 'yes').length;
+        return {unlicensed:item.length -licensed ,licensed};
     }
 
     const firstTimers =()=>{
@@ -128,14 +129,14 @@ const StatisticsProvider:React.FC<IStatisticsProviderProps> = ({ children })=>{
     const groupPercentage  = ()=>{
         let {adolescents} = Age();
         let {unlicensed} = hasLicense();
-        let {isFirstCar} = firstTimers();
+        let {isFirstCar, manyCar} = firstTimers();
         let {target} = tagertCustomers();
 
         return createChartData(
             [
                 percentage(adolescents,item.length),
                 percentage(unlicensed,item.length),
-                percentage(isFirstCar,item.length),
+                percentage(isFirstCar,isFirstCar+ manyCar),
                 percentage(target,item.length)
             ],
             ['rgb(255, 99, 132)','rgb(75, 192, 192)','rgb(255, 205, 86)','rgb(201, 203, 207)'],
