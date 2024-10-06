@@ -8,7 +8,7 @@ const StatisticsContext = React.createContext<IStatisticsContextType|null>(null)
 const StatisticsProvider:React.FC<IStatisticsProviderProps> = ({ children })=>{
     const {
         item
-    } = useLocalStorage('data',[], false);
+    } = useLocalStorage('dataSurvey',[], false);
 
     const [chartData, setChartData] = useState<IDataChart>({
         age: { labels: [], datasets: [] },
@@ -25,7 +25,7 @@ const StatisticsProvider:React.FC<IStatisticsProviderProps> = ({ children })=>{
     const Age =()=>{
         return {adolescents: item.filter((user:IData) => +user.age < 18).length,adults:item.filter((user:IData) => +user.age >= 18).length };
     }
-    
+
     const hasLicense =()=>{
         return {unlicensed:item.filter((user:IData) => user.hasLicense ==='no').length,licensed:item.filter((user:IData) => user.hasLicense === 'yes').length};
     }

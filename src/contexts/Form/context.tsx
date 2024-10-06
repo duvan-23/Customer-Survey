@@ -8,7 +8,7 @@ const FormContext = React.createContext<IUserContextType|null>(null);
 
 const FormProvider:React.FC<IFormProviderProps> = ({ children })=>{
 
-    const {item:data, saveItem:saveData} = useLocalStorage('data',[], false);
+    const {item:data, saveItem:saveData} = useLocalStorage('dataSurvey',[], false);
     const [openModal, setOpenModal] = React.useState({open:false,text:''});
     const [formData, setFormData] = useState({
         age: '',
