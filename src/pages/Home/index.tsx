@@ -9,21 +9,21 @@ const Home: React.FC = ()=>{
     handleNavigate
   }=useHomeContext();
 
-    return(
-      <div 
-        className="h-screen flex flex-col items-center justify-center"
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
+  return(
+    <div 
+      className="h-screen flex flex-col items-center justify-center"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
     >
       <div className="mb-10 flex items-center justify-center">
         <img src={logo} alt="Logo" className="h-32 w-auto" />
       </div>
 
-      <div className="flex space-x-12">
+      <div className="flex md:space-x-12 space-x-0 space-y-12 md:space-y-0 flex-col md:flex-row">
         <div 
           onClick={() => handleNavigate('/survey', ['user'])}
           className="cursor-pointer flex flex-col items-center bg-gradient-to-br 
@@ -52,7 +52,7 @@ const Home: React.FC = ()=>{
 
       </div>
     </div>
-    )
+  );
 }
 
 export {Home}
